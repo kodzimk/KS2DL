@@ -1,4 +1,4 @@
-#include<glm/vec4.hpp>
+#pragma once
 
 namespace kl
 {

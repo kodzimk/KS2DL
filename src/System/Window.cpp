@@ -24,6 +24,8 @@ namespace kl
         glfwTerminate();
     }
 
+
+
     void Window::clear(kl::Color color)
     {
         glClear(GL_COLOR_BUFFER_BIT);
@@ -38,6 +40,8 @@ namespace kl
 
     void Window::display()
     {
-        glfwPollEvents();
+   
     }
+
+
 }

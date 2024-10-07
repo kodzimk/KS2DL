@@ -1,3 +1,4 @@
+#pragma once
 #include<include-glew/GL/glew.h>
 #include<include-glfw/GLFW/glfw3.h>
 #include<glm/vec3.hpp>
@@ -12,17 +13,17 @@ namespace kl
 		Window(int width, int height, const char* title, const char* image);
 		~Window();
 
-	public:
 		void clear(kl::Color color);
 		void display();
 
 	public:
 		bool isOpen();
-
 	private:
 		GLFWwindow* window;
 		const char* title;
 		int width;
 		int height;
+
+		friend class Event;
 	};
 }
