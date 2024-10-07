@@ -1,4 +1,4 @@
-#include"Window.h"
+#include"../Window.h"
 
 namespace kl
 {
@@ -24,16 +24,10 @@ namespace kl
         glfwTerminate();
     }
 
-    void Window::clear(float r, float g, float b)
-    {
-        glClear(GL_COLOR_BUFFER_BIT);
-        glClearColor(r,g,b, 1.0f);
-        glfwSwapBuffers(window);
-    }
-
     void Window::clear(kl::Color color)
     {
         glClear(GL_COLOR_BUFFER_BIT);
+        glClearColor(color.r, color.g, color.b, color.a);
         glfwSwapBuffers(window);
     }
 

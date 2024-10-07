@@ -1,7 +1,7 @@
 #include<include-glew/GL/glew.h>
 #include<include-glfw/GLFW/glfw3.h>
 #include<glm/vec3.hpp>
-#include"../Color.h"
+#include"Color.h"
 
 namespace kl
 {
@@ -14,7 +14,6 @@ namespace kl
 
 	public:
 		void clear(kl::Color color);
-		void clear(float r,float g,float b);
 		void display();
 
 	public:

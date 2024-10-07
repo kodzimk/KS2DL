@@ -132,6 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\impl\Color.cpp" />
     <ClCompile Include="src\source.cpp" />
     <ClCompile Include="src\System\Window.cpp" />
   </ItemGroup>
@@ -140,7 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Color.h" />
-    <ClInclude Include="src\System\Window.h" />
+    <ClInclude Include="src\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
