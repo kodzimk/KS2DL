@@ -136,7 +136,6 @@
     <ClCompile Include="src\impl\Color.cpp" />
     <ClCompile Include="src\Event.h" />
     <ClCompile Include="src\source.cpp" />
-    <ClCompile Include="src\System\Event.cpp" />
     <ClCompile Include="src\System\Window.cpp" />
   </ItemGroup>
   <ItemGroup>

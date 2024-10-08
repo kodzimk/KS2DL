@@ -1,18 +1,23 @@
 #include<iostream>
-#include"Event.h"
+#include"Window.h"
+
 
 int main(void)
 {
 	kl::Window window(600, 400, "Hello World", NULL);
 	
-	kl::Event event(&window);
+	kl::Event event;
+	
 
 	while (window.isOpen())
 	{
-		/*if (event.pKey == 'A')
+		if (window.pollEvent(event))
 		{
-			std::cout << 'A';
-		}*/
+			if (event.type == kl::EventType::KeyRepeated)
+			{
+				std::cout << char(event.keyboard.key + 65);
+			}
+		}
 		window.clear(kl::Color::White());
 		window.display();
 	}

@@ -1,5 +1,6 @@
 #pragma once
-#include"Window.h"
+#ifndef EVENT_H
+#define EVENT_H
 
 namespace kl
 {
@@ -11,22 +12,44 @@ namespace kl
 		KeyRepeated
 	};
 
-	 class Event
-	{
-	public:
-		Event();
-		Event(Window* window);
-		~Event();
-	private:
-		static void keyCallback(GLFWwindow* window, int button, int scancode, int action, int mods);
-		static void mouseButtonCallBack(GLFWwindow* window, int button, int action, int mode);
-		static void mousePosCallBack(GLFWwindow* window, double xpos, double ypos);
-		static void windowResizeCallBack(GLFWwindow* windw, int width, int height);
-	public:
+
+	 class Keyboard
+	 {
+	 public:
+		 int key;
 		 EventType type;
-		 static char pKey;
-	};
+	 public:
+		 Keyboard()
+		 {
+			 type = EventType::None;
+			 key = -1;
+		 }
+		 void update(int key, int mode)
+		 {
+			 this->key = key;
 
-	 char Event::pKey = ' ';
+			 switch (mode)
+			 {
+			  case 0: this->type = EventType::KeyReleased; break;
+			  case 1: this->type = EventType::KeyPressed; break;
+			  case 2: this->type = EventType::KeyRepeated; break;
+			  default:this->type = EventType::None; break;
+			 }
+		 }
 
+		 friend class Window;
+	 };
+	 class Event
+	 {
+	  public:
+		Event() = default;
+		~Event()
+		{
+
+		}
+	  public:
+		Keyboard keyboard;
+		EventType type = EventType::None;
+	 };
 }
+#endif
