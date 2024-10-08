@@ -52,6 +52,60 @@ namespace kl
    
     }
 
+    void Window::close()
+    {
+        glfwSetWindowShouldClose(window, 1);
+    }
+
+    void Window::setSize(int width, int height)
+    {
+        glfwSetWindowSize(window, width, height);
+    }
+
+    void Window::setPosition(int x, int y)
+    {
+        glfwSetWindowPos(window, x, y);
+        position.x = x;
+        position.y = y;
+    }
+
+    bool Window::getVisiblity()
+    {
+        return this->visibility;
+    }
+
+    void Window::setTitle(const char* title)
+    {
+        glfwSetWindowTitle(window, title);
+    }
+
+    bool Window::hasFocus()
+    {
+        return true;
+        glfwwindowcapt
+    }
+
+    void Window::setVisibility(bool visibility)
+    {
+
+        if (visibility)
+        {
+            glfwHideWindow(window);
+            this->visibility = false;
+        }
+        else
+        {
+            glfwShowWindow(window);
+            this->visibility = true;
+        }
+
+    }
+
+    glm::vec2 Window::getPosition()
+    {
+        return position;
+    }
+
     bool Window::pollEvent(Event& event)
     {
         tempEvent = &event;
