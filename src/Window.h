@@ -27,6 +27,7 @@ namespace kl
 		static void mouseButtonCallBack(GLFWwindow* window, int button, int action, int mode);
 		static void mousePosCallBack(GLFWwindow* window, double xpos, double ypos);
 		static void windowResizeCallBack(GLFWwindow* windw, int width, int height);
+		static void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 	private:
 		inline static Event* tempEvent;
 	private:

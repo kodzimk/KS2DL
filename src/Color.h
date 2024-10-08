@@ -1,4 +1,6 @@
 #pragma once
+#ifndef COLOR_H
+#define COLOR_H
 
 namespace kl
 {
@@ -24,3 +26,4 @@ namespace kl
 		float a;
 	};
 }
+#endif
